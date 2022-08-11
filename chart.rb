@@ -23,6 +23,14 @@ class BarChart < Chart
         axis_labels
     end
 
+    def generateLink(series, dates)
+        seriesQuery = series.join(@@uri_delimiter)
+        datesQuery = dates.join(@@uri_delimiter)
+        fillQuery = generateFillText(series)
+
+        link = "#{@@chart_uri}&chd=a:#{seriesQuery}&chxl=0:#{@@uri_delimiter}#{datesQuery}&chm=#{fillQuery}"
+    end
+
     def generateFillText(series)
         fillString = ""
         fillColor = "ffffff"
