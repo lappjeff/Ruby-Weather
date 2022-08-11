@@ -22,5 +22,23 @@ class BarChart < Chart
         
         axis_labels
     end
+
+    def generateFillText(series)
+        fillString = ""
+        fillColor = "ffffff"
+        fillFontSize = 15
+
+        i = 0
+        
+        while i < series.length
+        
+            fillString += "N,#{fillColor},#{i},,#{fillFontSize}#{@@uri_delimiter}"
+
+            i += 1
+        end
+
+        # remove trailing pipe character 
+        fillString = fillString.chop
+    end
 end
 
