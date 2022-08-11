@@ -9,6 +9,10 @@ class GeoData
 
     def initialize(ip)
         @ip = ip
+
+        fetchCoordinates()
+    end 
+
     def fetchCoordinates
         geocode_api_key = ENV["GEOCODE_API_KEY"]
 
