@@ -8,7 +8,7 @@ Windows: https://rubyinstaller.org/
 
 Linux: https://phoenixnap.com/kb/install-ruby-ubuntu (Rbenv recommended)
 
-Mac: https://mac.install.guide/ruby/12.html
+Mac: [https://mac.install.guide/ruby/12.html](https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/#start-here-if-you-choose-the-long-and-manual-route)
 
 # Usage
 1. Clone repo
