@@ -7,6 +7,7 @@ class Weather
     @min_temps = nil 
 
     def initialize(latitude, longitude, days = 7)
+        fetchWeather(latitude, longitude)
     end
 
     def printDates 
@@ -20,6 +21,20 @@ class Weather
     def printMaxTemps
         @max_temps
     end 
+
+    def fetchWeather(latitude, longitude, days = 7) 
+        weather_uri = URI("https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=auto&past_days=6")
+
+        weather_res = Net::HTTP.get(weather_uri)
+
+        weather = JSON.parse(weather_res)['daily']
+
+        @dates = weather["time"][0, days]
+        @max_temps = weather['temperature_2m_max'][0, days]
+        @min_temps = weather["temperature_2m_min"][0, days]
+    end
+
+    private :fetchWeather
 
     def reportWeather()
 
