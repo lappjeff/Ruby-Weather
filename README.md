@@ -2,6 +2,10 @@
 
 Ruby script designed to provide weather data from past 1-10 days.
 
+*Repo requires that you have Ruby/Rails installed system wide*
+
+Follow instructions here if Ruby is not already installed on machine: https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm
+
 # Usage
 1. Clone repo
 2. Run `gem install launchy dotenv`
