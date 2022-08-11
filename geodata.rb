@@ -10,4 +10,12 @@ class GeoData
     def initialize(ip)
         @ip = ip
     end 
+    def printLatitude 
+        @latitude
+    end  
+
+    def printLongitude 
+        @longitude
+    end  
+
 end
