@@ -1,6 +1,5 @@
 require 'net/http'
 require 'json'
-require 'dotenv/load'
 
 class GeoData 
     @latitude = nil 

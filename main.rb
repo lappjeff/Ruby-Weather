@@ -1,5 +1,6 @@
 require 'net/http'
 require 'launchy'
+require 'dotenv/load'
 
 require_relative './geodata'
 require_relative './weather'
