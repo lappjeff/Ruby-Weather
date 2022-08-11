@@ -14,5 +14,13 @@ class BarChart < Chart
     def generateSerie(points)
         points.join(",")
     end
+
+    def generateLabels(labels)
+        i = 0
+
+        axis_labels = labels.join(@@uri_delimiter)
+        
+        axis_labels
+    end
 end
 
