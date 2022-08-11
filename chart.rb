@@ -11,5 +11,8 @@ class BarChart < Chart
         @@chart_uri = @@chart_uri + "&cht=#{barType}&chma=0,0,20,10&chxt=x,y&chdl=#{legend}"
     end
 
+    def generateSerie(points)
+        points.join(",")
+    end
 end
 
