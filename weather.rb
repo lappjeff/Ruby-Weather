@@ -6,8 +6,21 @@ class Weather
     @max_temps = nil 
     @min_temps = nil 
 
-    def initialize(latitude, longitude, days = 7)
-        fetchWeather(latitude, longitude)
+    def initialize(latitude, longitude, days)
+
+        day_range = days.to_i 
+
+        # min and max value ensure chart stays uniform
+        # values greater than 10 break down the chart layout
+        min_day_range = 1
+        max_day_range = 10
+
+        if day_range < min_day_range or day_range > max_day_range 
+            raise "Day range of #{day_range} is outside limit of #{min_day_range}-#{max_day_range}"
+        end 
+
+        fetchWeather(latitude, longitude, day_range)
+        
     end
 
     def printDates 
@@ -22,8 +35,9 @@ class Weather
         @max_temps
     end 
 
-    def fetchWeather(latitude, longitude, days = 7) 
-        weather_uri = URI("https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=auto&past_days=6")
+    def fetchWeather(latitude, longitude, days)
+
+        weather_uri = URI("https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}&daily=temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=auto&past_days=#{days - 1}")
 
         weather_res = Net::HTTP.get(weather_uri)
 

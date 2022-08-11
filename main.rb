@@ -11,14 +11,15 @@ public_ip = Net::HTTP.get URI "https://api.ipify.org"
 
 geodata = GeoData.new(public_ip)
 
-weather = Weather.new(geodata.printLatitude, geodata.printLongitude)
+day_range = ARGV[0] || 7
+    
+weather = Weather.new(geodata.printLatitude, geodata.printLongitude, day_range)
 
 weather.reportWeather
 
-
 print "\n View chart data[y,n]?"
 
-view_chart_data = gets.chomp
+view_chart_data = STDIN.gets.chomp
 
 if(view_chart_data != 'y' and view_chart_data != 'yes') 
     return 
