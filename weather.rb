@@ -13,4 +13,11 @@ class Weather
         @dates
     end 
 
+    def printMinTemps
+        @min_temps
+    end 
+
+    def printMaxTemps
+        @max_temps
+    end 
 end
