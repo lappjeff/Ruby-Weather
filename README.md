@@ -4,7 +4,11 @@ Ruby script designed to provide weather data from past 1-10 days.
 
 *Repo requires that you have Ruby/Rails installed system wide*
 
-Follow instructions here if Ruby is not already installed on machine: https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm
+Windows: https://rubyinstaller.org/
+
+Linux: https://phoenixnap.com/kb/install-ruby-ubuntu (Rbenv recommended)
+
+Mac: https://mac.install.guide/ruby/12.html
 
 # Usage
 1. Clone repo
